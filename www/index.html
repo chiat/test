@@ -25,9 +25,6 @@
               $scope.mySplitterSide.open();
             }
           });
-        ons.ready(function() {
-            console.log("Onsen UI is ready!");
-        });
     </script>
 </head>
 <body>
@@ -44,6 +41,9 @@
           </ons-list-item>
           <ons-list-item ng-click="load('about.html')" tappable>
             About
+          </ons-list-item>
+          <ons-list-item onclick="javascript: location.href='map_test.html';" tappable>
+            Map
           </ons-list-item>
         </ons-list>
       </ons-page>
