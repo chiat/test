@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="components/monaca-jquery/jquery.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={APIkey}"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+		// キャンパスの要素を取得する
+		var canvas = document.getElementById( 'map-canvas' ) ;
+		
+		// 中心の位置座標を指定する
+		var latlng = new google.maps.LatLng( 35.792621 , 139.806513 );
+		
+		// 地図のオプションを設定する
+		var mapOptions = {
+		    zoom: 15 ,				// ズーム値
+			center: latlng ,		// 中心座標 [latlng]
+		};
+		
+		// [canvas]に、[mapOptions]の内容の、地図のインスタンス([map])を作成する
+		var map = new google.maps.Map( canvas , mapOptions ) ;
+    });
+    </script>
+    <style type="text/css">
+		.map-embed
+		{
+		    max-width: 100% ;
+			height: 0 ;
+			margin: 0 ;
+			padding: 0 0 56.25% ;
+		
+			overflow: hidden ;
+		
+			position: relative ;
+			top: 0 ;
+			left: 0 ;
+		}
+		
+		.map-embed > div
+		{
+			position: absolute ;
+			top: 0 ;
+			left: 0 ;
+		
+			width: 100% ;
+			height: 100% ;
+		
+			margin: 0 ;
+			padding: 0 ;
+		}
+		
+		.map-embed img
+		{
+			max-width: none ;
+		}
+    </style>
+</head>
+<body>
+<!-- 地図のキャンパス -->
+<div class="map-embed">
+    <div id="map-canvas">ここに地図が表示されます</div>
+</div>
+</body>
+</html>
